@@ -1,0 +1,42 @@
+Setting up the Server
+
+- create our folder 
+- npm init
+
+
+Install our dependences
+
+ Usual Dependecies are
+
+ - mongoose (Described connection to the database)
+ - ejs (handles the views the user seess)
+ - method-override (Used for Delete and Put routes)
+ - morgan  ( a logger that logs request to the terminal)
+ - express (Sets up our server)
+
+
+Set up server.js  or index.js with express boilerplate to get a server running
+
+
+Work on the landing screen ('/')
+Create route for /
+create view page associated with route for the res.render
+
+
+Add in middleware to use public directory 
+this way we can use css and js is we want
+
+Install this so was can have a layout for our entire app
+npm install express-ejs-layouts
+
+
+
+User routes
+
+Auth Login / Sign up
+// For users without an account
+GET '/signup' - get the sign up form
+POST '/signup' - create the user and navigate to login
+// for users with an account
+GET '/login' 0 get the login form
+POST '/login' - login  user and send to coffee index page.
