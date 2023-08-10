@@ -76,3 +76,8 @@ https://www.npmjs.com/package/bcrypt
 
 Update our post routes to use bcrypt to handle passwords.
 
+We are going to use sessions
+
+Sessions allows us to persist logins accorss multiple request.
+Sessions create cookies that store the users login for us in the browers.
+Each reques we make will include this cookie.

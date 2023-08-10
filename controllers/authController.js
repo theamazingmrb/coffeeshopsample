@@ -19,7 +19,16 @@ router.post("/login", async (req, res) => {
       // true the password matched
       // false no match
       if (result) {
-        res.send("Woo your logged in");
+        // set the users id onto the sessions,
+        // this is useful when we start associated users to other models like
+        // Orders
+        // We can store anything we want on req.session to use it later
+        // in this case we are making a new key called userId and setting
+        // it to the users id whos logging in.
+        req.session.userId = userToLogin._id;
+        req.session.name = userToLogin.name;
+
+        res.redirect("/coffee");
       } else {
         res.send("Incorrect Passord");
       }
