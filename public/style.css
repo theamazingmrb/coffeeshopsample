@@ -6,3 +6,8 @@ h1 {
   display: flex;
   padding: 5%;
 }
+
+#nav {
+  display: flex;
+  justify-content: space-around;
+}

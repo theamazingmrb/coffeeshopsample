@@ -1,8 +1,10 @@
-<% [{ name: 'Carmel Frap' }, { name: 'Mocha Frap' }, { name: 'Carmel Latte' }].forEach( coffee=> { %>
+<% coffees.forEach( coffee=> { %>
 
     <h1>
         <%= coffee.name %>
     </h1>
-
+    <p>
+        <%= coffee.description %>
+    </p>
 
     <% }) %>
