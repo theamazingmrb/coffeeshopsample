@@ -68,3 +68,11 @@ Log in a User
  - compare the users password to the password in the req.body
  - if they match wooo login
  - else nope no login for that person
+
+
+
+We will use bcrypt to compare and hash password
+https://www.npmjs.com/package/bcrypt
+
+Update our post routes to use bcrypt to handle passwords.
+
