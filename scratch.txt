@@ -30,6 +30,10 @@ Install this so was can have a layout for our entire app
 npm install express-ejs-layouts
 
 
+In order to use Req.body for logging in or signing up we need to Add
+this code in order to have access to req.body
+app.use(express.urlencoded({ extended: true }));
+
 
 User routes
 
@@ -40,3 +44,27 @@ POST '/signup' - create the user and navigate to login
 // for users with an account
 GET '/login' 0 get the login form
 POST '/login' - login  user and send to coffee index page.
+
+Signin up a User
+ - we need a model set up, connected to a mongodb
+ - password, hash (bcrypt) that password before we put in the database
+ - after the password is hashed store the user in the database
+
+ - Set up mongo connection
+ - set up up model
+ - update the signup post request route
+
+
+ Setting up our Database for mongo
+ Create a DB folder with a connection.js
+ add mongoose set up here
+
+
+ Set up models in a models folder
+
+
+Log in a User
+ - Find the user in the database that trying to login so we can check the password
+ - compare the users password to the password in the req.body
+ - if they match wooo login
+ - else nope no login for that person
