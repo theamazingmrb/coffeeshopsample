@@ -81,3 +81,13 @@ We are going to use sessions
 Sessions allows us to persist logins accorss multiple request.
 Sessions create cookies that store the users login for us in the browers.
 Each reques we make will include this cookie.
+
+
+
+
+
+Last two things
+
+// Order page to order - make new order for user
+
+// my order - see all users specific order

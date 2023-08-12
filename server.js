@@ -19,6 +19,7 @@ app.use(
 
 // without express.urlencoded we cannot use form data
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // anywhere below middlewares
 app.use(authRoutes);
@@ -28,14 +29,14 @@ app.get("/", (req, res) => {
 });
 // define our own middle to check for a loggin user
 // if no user go to login screen
-app.use((req, res, next) => {
-  if (!req.session.userId) {
-    res.redirect("/login");
-    return;
-  }
+// app.use((req, res, next) => {
+//   if (!req.session.userId) {
+//     res.redirect("/login");
+//     return;
+//   }
 
-  next();
-});
+//   next();
+// });
 
 app.use("/coffee", coffeeRoutes);
 
