@@ -1,0 +1,21 @@
+<% orders.forEach(order=>{ %>
+
+    <h2>Order for <%= order.userId.name %>
+    </h2>
+    <h4>Total: <%= order.total %>
+    </h4>
+
+    <% order.coffees.forEach( coffee=> {%>
+
+        <div>
+            <p>
+                <%= coffee.name %> - <%= coffee.price %>
+            </p>
+            <p>
+                <%= coffee.description %>
+            </p>
+        </div>
+
+        <% }) %>
+
+            <% }) %>

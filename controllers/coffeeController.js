@@ -10,6 +10,8 @@ router.get("/", async (req, res) => {
 
 // route for seeding coffees
 router.get("/seed", async (req, res) => {
+  await Order.deleteMany({});
+  await Coffee.deleteMany({});
   let seededCoffees = await Coffee.create([
     {
       name: "Carmel Frap",
@@ -43,7 +45,8 @@ router.get("/seed", async (req, res) => {
 router.post("/order", async (req, res) => {
   // 1 Find the coffees so we can add the totals
   let coffees = await Coffee.find({ _id: { $in: req.body.coffees } });
-  // console.log(coffees);
+  req.body.userId = req.session.userId;
+
   let total = 0;
   req.body.coffees.forEach(
     (coffee) =>
@@ -68,6 +71,15 @@ router.get("/order/:id", async (req, res) => {
 
   // res.json(order);
   res.render("order/show.ejs", { order });
+});
+
+router.get("/order", async (req, res) => {
+  const orders = await Order.find({ userId: req.session.userId })
+    .populate("coffees")
+    .populate("userId");
+
+  console.log(orders);
+  res.render("order/index.ejs", { orders });
 });
 
 module.exports = router;
