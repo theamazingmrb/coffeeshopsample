@@ -1,9 +1,9 @@
+require("dotenv").config();
+
 const mongoose = require("mongoose");
 
 // mongoose.connect - to tell mongoose what database
-mongoose.connect(
-  "mongodb+srv://admin:uohW3I7XndvkgEcd@sei-tumeric.hbuqbhu.mongodb.net/coffee-app"
-);
+mongoose.connect(process.env.MONGOURI);
 
 // check for error or successful connection
 mongoose.connection.on("connected", () => console.log("Yay connected"));

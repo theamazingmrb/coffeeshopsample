@@ -1,7 +1,8 @@
 // bring in  express
+require("dotenv").config();
 const express = require("express");
 const app = express();
-const PORT = 8000;
+const PORT = process.env.port || 8000;
 const expressLayouts = require("express-ejs-layouts");
 const authRoutes = require("./controllers/authController");
 const session = require("express-session");
